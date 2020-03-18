@@ -1,13 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using DatingApp.API.Data;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace DatingApp.API.Controllers
 {
     [ApiController]
-    [Route("[api/controller]")]
+    [Route("[controller]")]
     public class ValuesController : ControllerBase
     {
 

@@ -1,15 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using DatingApp.API.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -33,6 +26,9 @@ namespace DatingApp.API
             (Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
             services.AddCors();
+            // el service se crea una vez por request
+            // le permite a la clase especificada ser utilizada para inyecciones
+            services.AddScoped<IAuthRepository, AuthRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
