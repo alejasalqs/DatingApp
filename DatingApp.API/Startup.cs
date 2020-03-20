@@ -5,6 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using DatingApp.API.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace DatingApp.API
 {
@@ -29,6 +32,19 @@ namespace DatingApp.API
             // el service se crea una vez por request
             // le permite a la clase especificada ser utilizada para inyecciones
             services.AddScoped<IAuthRepository, AuthRepository>();
+            // configuramos la autorizacion sin esto los metodos protegidos no servirian
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
+                        .GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +62,9 @@ namespace DatingApp.API
             // En .net core tiene que antes de app.UseAuthorization(); y despues de app.UseRouting();
 
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+            // agregamos la autorizacion
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

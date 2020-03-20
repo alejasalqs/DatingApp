@@ -60,3 +60,11 @@ C:\Users\Xtreme Pc\Desktop\Angular\Dating\DatingApp.API\obj\Debug\netcoreapp3.0\
 C:\Users\Xtreme Pc\Desktop\Angular\Dating\DatingApp.API\obj\Debug\netcoreapp3.0\DatingApp.API.dll
 C:\Users\Xtreme Pc\Desktop\Angular\Dating\DatingApp.API\obj\Debug\netcoreapp3.0\DatingApp.API.pdb
 C:\Users\Xtreme Pc\Desktop\Angular\Dating\DatingApp.API\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Xtreme Pc\Desktop\Angular\Dating\DatingApp.API\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Xtreme Pc\Desktop\Angular\Dating\DatingApp.API\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Xtreme Pc\Desktop\Angular\Dating\DatingApp.API\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Xtreme Pc\Desktop\Angular\Dating\DatingApp.API\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+C:\Users\Xtreme Pc\Desktop\Angular\Dating\DatingApp.API\bin\Debug\netcoreapp3.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Xtreme Pc\Desktop\Angular\Dating\DatingApp.API\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Xtreme Pc\Desktop\Angular\Dating\DatingApp.API\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Xtreme Pc\Desktop\Angular\Dating\DatingApp.API\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
