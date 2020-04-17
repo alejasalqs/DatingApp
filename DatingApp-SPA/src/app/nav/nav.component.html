@@ -1,23 +1,29 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Dating App</a>
+  <a class="navbar-brand" routerLink="[/home]">Dating App</a>
   <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Matches</a>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['/members']" *ngIf="loggedIn()"
+        >Matches</a
+      >
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['/lists']" *ngIf="loggedIn()">Lists</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['/messages']" *ngIf="loggedIn()"
+        >Messages</a
+      >
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Lists</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Messages</a>
-    </li>
-    <li class="nav-item">
-      <a (click)="logOut()" class="nav-link" href="#">Log Out</a>
+      <a (click)="logOut()" class="nav-link" href="#" *ngIf="loggedIn()"
+        >Log Out</a
+      >
     </li>
   </ul>
 
   <div *ngIf="loggedIn()" class="dropdown">
     <a class="dropdown-toggle text-light">
-      Welcome user
+      Welcome {{ authService.decodedToken?.unique_name | titlecase }}
     </a>
 
     <div class="dropdown-menu">
